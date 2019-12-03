@@ -155,7 +155,7 @@
         GSTCState.update('config.list.rows', rows => {
           const rando = random(Object.keys(rows));
           if (rows[rando]){
-            console.log('deleting', rando);
+            console.log('deleting', rando, Object.keys(rows), rows[rando]);
             delete rows[rando];
           }
           return rows;
@@ -167,7 +167,7 @@
         GSTCState.update('config.chart.items', items => {
           const rando = random(Object.keys(items));
           if (items[rando]){
-            console.log('deleting', rando);
+            console.log('deleting', rando, Object.keys(items), items[rando]);
             delete items[rando];
           }
           return items;
