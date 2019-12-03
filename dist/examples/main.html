@@ -23,6 +23,7 @@
       <button id="change-something">Change something</button>
       <button onclick="deleteRow()">Delete row</button>
       <button onclick="deleteItem()">Delete item</button>
+      <button onclick="clearItems()">Clear</button>
     </div>
     <div id="app"></div>
     <script src="../ItemMovement.plugin.js"></script>
@@ -171,6 +172,22 @@
             delete items[rando];
           }
           return items;
+        });
+      };
+      
+      function clearItems(){
+        GSTCState.update('config.chart.items', items =>{
+          Object.keys(items).forEach(k=>{
+            delete items[k];
+          });
+          return items;
+        });
+
+        GSTCState.update('config.list.rows', rows =>{
+          Object.keys(rows).forEach(k=>{
+            delete rows[k];
+          });
+          return rows;
         });
       };
 
